@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+
+    <h2 th:text="${title}"></h2>
+
+</head>
+<body>
+
+
+Conference Start Date:
+<div th:text="${conference.conferenceStartDate}"></div>
+
+Conference End Date:
+<div th:text="${conference.conferenceEndDate}"></div>
+
+Conference Description:
+<div th:text="${conference.conferenceDescription}"></div>
+
+Conference open to:
+<div th:text="${conference.conferenceOpenTo}"></div>
+
+Conference Website:
+<div th:text="${conference.conferenceWebsite}"></div>
+
+Submission Date:
+<div th:text="${conference.submissionDate}"></div>
+
+Send submission to:
+<div th:text="${conference.sendSubmissionTo}"></div>
+
+For questions, contact
+<div th:text="${conference.contact}"></div>
+
+FILL IN ALL OTHER FIELDS!!!
+
+
+</body>
+</html>

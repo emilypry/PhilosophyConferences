@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+
+    <h2 th:text="${title}"></h2>
+
+</head>
+<body>
+
+<form method="post" th:object="${conference}">
+    <div>
+        <label th:for="conferenceName">Conference Name:</label>
+        <input th:field="*{conferenceName}" />
+    </div>
+
+    <div>
+        <label th:for="conferenceStartDate">Conference Date:</label>
+        <input th:field="*{conferenceStartDate}" type="date"/>
+        <label th:for="conferenceEndDate"> to </label>
+        <input th:field="*{conferenceEndDate}" type="date"/>
+    </div>
+
+    <div>
+        Conference Location:
+    </div>
+
+    <div>
+        <label th:for="conferenceDescription">Conference Description:</label>
+        <textarea th:field="*{conferenceDescription}" />
+    </div>
+
+    <div>
+        <label th:for="1">Conference open to: </label>
+
+        <input th:field="*{conferenceOpenTo}" type="radio" value="everyone" id="1"/>
+        <label th:for="1">Everyone</label>
+
+        <input th:field="*{conferenceOpenTo}" type="radio" name="conferenceOpenTo" value="onlyGrads" id="2"/>
+        <label th:for="2">Only graduate students</label>
+
+        <input th:field="*{conferenceOpenTo}" type="radio" name="conferenceOpenTo" value="other" id="3"/>
+        <label th:for="3">Other</label>
+    </div>
+
+    <div>
+        <label th:for="conferenceWebsite">Conference Website:</label>
+        <input th:field="*{conferenceWebsite}" type="url"/>
+    </div>
+
+
+    <div>
+        <label th:for="submissionDate">Submission Date:</label>
+        <input th:field="*{submissionDate}" type="date"/>
+    </div>
+
+    <div>
+        Submission Type(s):
+
+        <input th:field="*{submissionType}" type="radio" value="abstract" id="1"/>
+        <label th:for="1">Only abstract</label>
+
+        <input th:field="*{submissionType}" type="radio" value="paper" id="1"/>
+        <label th:for="1">Only paper</label>
+
+        <input th:field="*{submissionType}" type="radio" value="both" id="1"/>
+        <label th:for="1">Abstract and paper</label>
+
+        <input th:field="*{submissionType}" type="radio" value="either" id="1"/>
+        <label th:for="1">Abstract or paper</label>
+
+        <input th:field="*{submissionType}" type="radio" value="other" id="1"/>
+        <label th:for="1">Other</label>
+    </div>
+
+    <div>
+        Word Restrictions per Submission Type:
+    </div>
+
+    <div>
+        <label th:for="sendSubmissionTo">Send Submission to:</label>
+        <input th:field="*{sendSubmissionTo}" type="email"/>
+    </div>
+
+    <div>
+        <label th:for="contact">For questions, contact:</label>
+        <input th:field="*{contact}" type="email"/>
+    </div>
+
+    <div>
+        <input type="submit" value="Add Conference" />
+    </div>
+
+</form>
+
+</body>
+</html>
