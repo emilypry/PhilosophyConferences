@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -12,19 +12,27 @@ public class Conference {
     @Id
     @GeneratedValue
     public int id;
-    @NotNull
+
+    @Size(min=1, message = "Please enter the name of the conference.")
     public String conferenceName;
-    @NotNull
+
+    @NotNull(message="Please enter the starting date of the conference.")
     public Date conferenceStartDate;    //Change to a class consisting in M, D, Y
+
     public Date conferenceEndDate;
+
     //public Location conferenceLocation;
     public String conferenceDescription;
+
+    @NotNull(message="Please enter whom the conference is open to.")
     public String conferenceOpenTo;
     //public String presentationType; (talk, poster, symposium?)
     public String conferenceWebsite;
 
+    @NotNull(message="Please enter the submission date.")
     public Date submissionDate;
-    public ArrayList<String> submissionType;
+    @NotNull(message="Please enter the submission type.")
+    public String submissionType;
     //public Blah submissionLength;
     public String sendSubmissionTo;
     public String contact;
@@ -35,7 +43,7 @@ public class Conference {
     public Conference(String conferenceName, Date conferenceStartDate, Date conferenceEndDate,
                       Location conferenceLocation, String conferenceOpenTo,
                       String conferenceDescription, String conferenceWebsite, Date submissionDate,
-                      ArrayList<String> submissionType, String sendSubmissionTo, String contact){
+                      String submissionType, String sendSubmissionTo, String contact){
         this.conferenceName = conferenceName;
         this.conferenceStartDate = conferenceStartDate;
         this.conferenceEndDate = conferenceEndDate;
@@ -86,7 +94,7 @@ public class Conference {
     }
     public void setConferenceOpenTo(String conferenceOpenTo) {
         if (conferenceOpenTo.equals("everyone") || conferenceOpenTo.equals("onlyGrads")
-            || conferenceOpenTo.equals("other")){
+                || conferenceOpenTo.equals("other")){
             this.conferenceOpenTo = conferenceOpenTo;
         }
         else {
@@ -109,17 +117,17 @@ public class Conference {
     }
 
 
-    public ArrayList<String> getSubmissionType() {
+    public String getSubmissionType() {
         return submissionType;
     }
-    public void setSubmissionType(ArrayList<String> submissionType) {
-        this.submissionType = submissionType;
-        for (String type : submissionType) {
-            if (type.equals("paper") == false && type.equals("abstract") == false
-                    && type.equals("other") == false) { both, either....match html
-                this.submissionType = null;
-                break;
-            }
+    public void setSubmissionType(String submissionType) {
+        if (submissionType.equals("paper") || submissionType.equals("abstract")
+                || submissionType.equals("both") || submissionType.equals("either")
+                || submissionType.equals("other")) {
+            this.submissionType = submissionType;
+        }
+        else{
+            this.submissionType = null;
         }
     }
 

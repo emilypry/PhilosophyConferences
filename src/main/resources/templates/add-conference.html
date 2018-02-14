@@ -13,11 +13,13 @@
     <div>
         <label th:for="conferenceName">Conference Name:</label>
         <input th:field="*{conferenceName}" />
+        <span th:errors="*{conferenceName}" class="error"></span>
     </div>
 
     <div>
         <label th:for="conferenceStartDate">Conference Date:</label>
         <input th:field="*{conferenceStartDate}" type="date"/>
+
         <label th:for="conferenceEndDate"> to </label>
         <input th:field="*{conferenceEndDate}" type="date"/>
     </div>
@@ -32,46 +34,30 @@
     </div>
 
     <div>
-        <label th:for="1">Conference open to: </label>
-
-        <input th:field="*{conferenceOpenTo}" type="radio" value="everyone" id="1"/>
-        <label th:for="1">Everyone</label>
-
-        <input th:field="*{conferenceOpenTo}" type="radio" name="conferenceOpenTo" value="onlyGrads" id="2"/>
-        <label th:for="2">Only graduate students</label>
-
-        <input th:field="*{conferenceOpenTo}" type="radio" name="conferenceOpenTo" value="other" id="3"/>
-        <label th:for="3">Other</label>
-    </div>
-
-    <div>
-        <label th:for="conferenceWebsite">Conference Website:</label>
-        <input th:field="*{conferenceWebsite}" type="url"/>
-    </div>
-
-
-    <div>
         <label th:for="submissionDate">Submission Date:</label>
         <input th:field="*{submissionDate}" type="date"/>
+        <span th:errors="*{submissionDate}" class="error"></span>
     </div>
 
     <div>
-        Submission Type(s):
+        <label th:for="type1">Submission Type(s): </label>
 
-        <input th:field="*{submissionType}" type="radio" value="abstract" id="1"/>
-        <label th:for="1">Only abstract</label>
+        <input th:field="*{submissionType}" type="radio" value="paper" id="type1" name="submissionType"/>
+        <label th:for="type1">Only paper</label>
 
-        <input th:field="*{submissionType}" type="radio" value="paper" id="1"/>
-        <label th:for="1">Only paper</label>
+        <input th:field="*{submissionType}" type="radio" value="abstract" id="type2"/>
+        <label th:for="type2">Only abstract</label>
 
-        <input th:field="*{submissionType}" type="radio" value="both" id="1"/>
-        <label th:for="1">Abstract and paper</label>
+        <input th:field="*{submissionType}" type="radio" value="both" id="type3"/>
+        <label th:for="type3">Abstract and paper</label>
 
-        <input th:field="*{submissionType}" type="radio" value="either" id="1"/>
-        <label th:for="1">Abstract or paper</label>
+        <input th:field="*{submissionType}" type="radio" value="either" id="type4"/>
+        <label th:for="type4">Abstract or paper</label>
 
-        <input th:field="*{submissionType}" type="radio" value="other" id="1"/>
-        <label th:for="1">Other</label>
+        <input th:field="*{submissionType}" type="radio" value="other" id="type5"/>
+        <label th:for="type5">Other</label>
+
+        <span th:errors="*{submissionType}" class="error"></span>
     </div>
 
     <div>
@@ -79,8 +65,29 @@
     </div>
 
     <div>
+        <label th:for="open1">Submissions open to: </label>
+
+        <input th:field="*{conferenceOpenTo}" type="radio" value="everyone" id="open1"/>
+        <label th:for="open1">Everyone</label>
+
+        <input th:field="*{conferenceOpenTo}" type="radio" name="conferenceOpenTo" value="onlyGrads" id="open2"/>
+        <label th:for="open2">Only graduate students</label>
+
+        <input th:field="*{conferenceOpenTo}" type="radio" name="conferenceOpenTo" value="other" id="open3"/>
+        <label th:for="open3">Other</label>
+
+        <span th:errors="*{conferenceOpenTo}" class="error"></span>
+    </div>
+
+    <div>
         <label th:for="sendSubmissionTo">Send Submission to:</label>
         <input th:field="*{sendSubmissionTo}" type="email"/>
+
+    </div>
+
+    <div>
+        <label th:for="conferenceWebsite">Conference Website:</label>
+        <input th:field="*{conferenceWebsite}" type="url"/>
     </div>
 
     <div>
