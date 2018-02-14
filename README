@@ -1,0 +1,20 @@
+ --Website for philosophers to post and view philosophy conferences--
+This is similar to the site philevents.org (currently the most popular site for philosophers to post and view conferences), but with numerous enhancements.
+
+(1) The 'view all conferences' page shows important pieces of information about each conference that viewers look for: conference date, conference location, submission date, submission type (e.g., abstract and/or paper), word restrictions per submission type.
+
+This makes it easier for viewers to find the information they look for in every conference on the main page.
+
+(2) The 'view all conferences' page is able to be ordered by different factors, chosen by the viewer: by conference date, conference location, submission date, submission type, word length per submission type.
+
+This makes it easier for viewers to find the specific sort of conference that they are looking for.
+
+(3) Viewers are able to declare they are 'interested' in a conference, and can view the page of all of the conferences they personally are interested in.
+
+This makes it easier for viewers to keep track of the conferences they're interested in.
+
+(4) Viewers are able to set up email/text alerts for upcoming submission or conference dates for the conferences they are interested in.
+
+This makes it easier for viewers to keep track of the relevant dates for conferences they're interested in.
+
+The goal of PhilosophyConferences is (i) to make it easier for philosophers viewing conferences to find the information they are interested in about each conference, (ii) to enable philosophers to find the sort of conferences they're interested in more quickly, and (iii) to make it easier for philosophers to refer back to and remain aware of the conferences they're interested in.
